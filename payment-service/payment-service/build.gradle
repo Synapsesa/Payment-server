@@ -1,0 +1,31 @@
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation project(":payment-service-api")
+	// PortOne
+	implementation 'io.portone:server-sdk:0.19.0'
+	// Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	// JPA
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// PostgreSQL
+	runtimeOnly 'org.postgresql:postgresql'
+	// OAuth2 Resource Server
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	// WebFlux
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	//H2 Database
+	implementation 'com.h2database:h2'
+	// Test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,15 @@
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+bootJar {
+    enabled = false
+}
